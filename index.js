@@ -1,5 +1,6 @@
 var request = require('request');
 const shell = require('shelljs');
+const schedule = require('node-schedule');
 shell.cd(__dirname);
 var fs = require('fs');
 
@@ -20,6 +21,7 @@ request({
     console.log('Reponse received', body);
     // textwrite1.txt 파일에 동기적으로 쓰기
     fs.writeFileSync('info_air.json', body, 'utf8');
+    fs.writeFileSync('update.txt', uuidv4(), 'utf8');
     console.log('공기질 정보 성공');
     console.log(__dirname);
     if(shell.exec('./gitpush.sh').code !== 0)  {
@@ -29,3 +31,10 @@ request({
         console.log('done');
     }
 });
+
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
