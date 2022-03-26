@@ -19,7 +19,7 @@ function uuidv4() {
     });
   }
 
-schedule.scheduleJob("16 * * * *", function () {
+schedule.scheduleJob("20 * * * *", function () {
 request({
     url: url + queryParams,
     method: 'GET'
