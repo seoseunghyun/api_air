@@ -52,6 +52,7 @@ function uuidv4() {
             url: url2 + queryParams2,
             method: 'GET'
         }, function (error, response, body) {
+            console.log(url2 + queryParams2);
             //console.log('Status', response.statusCode);
             //console.log('Headers', JSON.stringify(response.headers));
             console.log('Reponse received', body);
