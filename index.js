@@ -50,7 +50,10 @@ function uuidv4() {
         method: 'GET'
     }, function (error, response, body) {
         var _body = JSON.parse(body);
-
+        for(var i in _body.response.body.items) {
+        _center = _body.response.body.items[i];
+            console.log(_center.addr)
+        }
         fs.writeFileSync('info_center.json', body, 'utf8');
         console.log('공기질 센터 정보 성공');
 
