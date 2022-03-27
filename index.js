@@ -98,5 +98,5 @@ schedule.scheduleJob("20 * * * *", function () {
             } else {
                 console.log('done');
             }
-        },5000)
+        },10000)
 });
