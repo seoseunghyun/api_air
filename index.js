@@ -45,13 +45,35 @@ function uuidv4() {
 
 // schedule.scheduleJob("20 * * * *", function () {
     
-    // request({
-    //     url: url3 + queryParams3,
-    //     method: 'GET'
-    // }, function (error, response, body) {
-    //     fs.writeFileSync('info_center.json', body, 'utf8');
-    //     console.log('공기질 센터 정보 성공');
-
+        request({
+            url: url3 + queryParams3,
+            method: 'GET'
+        }, function (error, response, body3) {
+            var _body = JSON.parse(body3);
+            _body.response.body.sidoList = {
+                '경기남부' : ['경기남부'],
+                '경기북부' : ['경기북부'],
+                '전남' : ['전남'],
+                '전북' : ['전북'],
+                '경남' : ['경남'],
+                '경북' : ['경북'],
+                '충남' : ['충남'],
+                '충북' : ['충북'],
+                '영동' : ['영동'],
+                '영서' : ['영서'],
+                '서울' : ['서울'],
+                '제주' : ['제주'],
+                '광주' : ['광주'],
+                '울산' : ['울산'],
+                '대구' : ['대구'],
+                '부산' : ['부산'],
+                '세종' : ['세종'],
+                '대전' : ['대전'],
+                '인천' : ['인천']
+            }
+            fs.writeFileSync('info_center.json', JSON.stringify(_body), 'utf8');
+            console.log('공기질 센터 정보 성공');
+        });
         request({
             url: url + queryParams,
             method: 'GET'
@@ -76,6 +98,5 @@ function uuidv4() {
             } else {
                 console.log('done');
             }
-        },10000)
-    // });
+        },5000)
 // });
