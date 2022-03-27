@@ -45,42 +45,37 @@ function uuidv4() {
 
 // schedule.scheduleJob("20 * * * *", function () {
     
-    request({
-        url: url3 + queryParams3,
-        method: 'GET'
-    }, function (error, response, body) {
-        var _body = JSON.parse(body);
-        for(var i in _body.response.body.items) {
-        _center = _body.response.body.items[i];
-            console.log(_center.addr)
-        }
-        fs.writeFileSync('info_center.json', body, 'utf8');
-        console.log('공기질 센터 정보 성공');
+    // request({
+    //     url: url3 + queryParams3,
+    //     method: 'GET'
+    // }, function (error, response, body) {
+    //     fs.writeFileSync('info_center.json', body, 'utf8');
+    //     console.log('공기질 센터 정보 성공');
 
         request({
             url: url + queryParams,
             method: 'GET'
         }, function (error, response, body) {
-            var _body = JSON.parse(body);
-    
             fs.writeFileSync('info_air.json', body, 'utf8');
             console.log('공기질 정보 성공');
-            // console.log(__dirname);
-            request({
-                url: url2 + queryParams2,
-                method: 'GET'
-            }, function (error, response, body) {
-                fs.writeFileSync('info_air_forecast.json', body, 'utf8');
-                fs.writeFileSync('update.txt', uuidv4(), 'utf8');
-                console.log('공기질 예측 정보 성공');
-                // console.log(__dirname);
-                if(shell.exec('./gitpush.sh').code !== 0)  {
-                    shell.echo('error');
-                    shell.exit(1);
-                } else {
-                    console.log('done');
-                }
-            });
         });
-    });
+        request({
+            url: url2 + queryParams2,
+            method: 'GET'
+        }, function (error, response, body2) {
+            fs.writeFileSync('info_air_forecast.json', body2, 'utf8');
+            fs.writeFileSync('update.txt', uuidv4(), 'utf8');
+            console.log('공기질 예측 정보 성공');
+            // console.log(__dirname);
+        });
+        setTimeout(function(){
+
+            if(shell.exec('./gitpush.sh').code !== 0)  {
+                shell.echo('error');
+                shell.exit(1);
+            } else {
+                console.log('done');
+            }
+        },10000)
+    // });
 // });
