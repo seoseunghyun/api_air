@@ -51,7 +51,7 @@ function uuidv4() {
         }, function (error, response, body3) {
             var _body = JSON.parse(body3);
             _body.response.body.sidoList = {
-                '경기남부' : ['경기남부'],
+                '경기남부' : ['경기남부', '수원시'],
                 '경기북부' : ['경기북부'],
                 '전남' : ['전남'],
                 '전북' : ['전북'],
