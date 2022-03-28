@@ -44,7 +44,7 @@ function uuidv4() {
     });
   }
 
-schedule.scheduleJob("13 * * * *", function () {
+schedule.scheduleJob("20 * * * *", function () {
     
         request({
             url: url3 + queryParams3,
