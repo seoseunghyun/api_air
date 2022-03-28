@@ -3,6 +3,7 @@ const shell = require('shelljs');
 const schedule = require('node-schedule');
 shell.cd(__dirname);
 var fs = require('fs');
+const { setTimeout } = require('long-timeout');
 var MyDate = new Date();
 var MyDateString;
 
@@ -43,7 +44,7 @@ function uuidv4() {
     });
   }
 
-// schedule.scheduleJob("20 * * * *", function () {
+schedule.scheduleJob("13 * * * *", function () {
     
         request({
             url: url3 + queryParams3,
@@ -74,22 +75,28 @@ function uuidv4() {
             fs.writeFileSync('info_center.json', JSON.stringify(_body), 'utf8');
             console.log('공기질 센터 정보 성공');
         });
-        request({
-            url: url + queryParams,
-            method: 'GET'
-        }, function (error, response, body) {
-            fs.writeFileSync('info_air.json', body, 'utf8');
-            console.log('공기질 정보 성공');
-        });
-        request({
-            url: url2 + queryParams2,
-            method: 'GET'
-        }, function (error, response, body2) {
-            fs.writeFileSync('info_air_forecast.json', body2, 'utf8');
-            fs.writeFileSync('update.txt', uuidv4(), 'utf8');
-            console.log('공기질 예측 정보 성공');
-            // console.log(__dirname);
-        });
+        setTimeout(function(){
+
+            request({
+                url: url + queryParams,
+                method: 'GET'
+            }, function (error, response, body) {
+                fs.writeFileSync('info_air.json', body, 'utf8');
+                console.log('공기질 정보 성공');
+            });
+        },4000)
+        setTimeout(function(){
+
+            request({
+                url: url2 + queryParams2,
+                method: 'GET'
+            }, function (error, response, body2) {
+                fs.writeFileSync('info_air_forecast.json', body2, 'utf8');
+                fs.writeFileSync('update.txt', uuidv4(), 'utf8');
+                console.log('공기질 예측 정보 성공');
+                // console.log(__dirname);
+            });
+        },8000);
         setTimeout(function(){
 
             if(shell.exec('./gitpush.sh').code !== 0)  {
@@ -98,5 +105,5 @@ function uuidv4() {
             } else {
                 console.log('done');
             }
-        },10000)
-// });
+        },15000)
+});
