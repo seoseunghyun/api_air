@@ -44,7 +44,7 @@ function uuidv4() {
     });
   }
 
-// schedule.scheduleJob("20 * * * *", function () {
+schedule.scheduleJob("20 * * * *", function () {
     
         request({
             url: url3 + queryParams3,
@@ -106,4 +106,4 @@ function uuidv4() {
                 console.log('done');
             }
         },15000)
-// });
+});
