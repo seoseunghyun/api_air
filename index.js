@@ -44,7 +44,7 @@ function uuidv4() {
     });
   }
 
-// schedule.scheduleJob("20 * * * *", function () {
+schedule.scheduleJob("20 * * * *", function () {
     
         // request({
         //     url: url3 + queryParams3,
@@ -84,7 +84,7 @@ function uuidv4() {
                 fs.writeFileSync('info_air.json', body, 'utf8');
                 console.log('공기질 정보 성공');
             });
-        },4000)
+        },1000)
         setTimeout(function(){
 
             request({
@@ -96,7 +96,7 @@ function uuidv4() {
                 console.log('공기질 예측 정보 성공');
                 // console.log(__dirname);
             });
-        },8000);
+        },4000);
         setTimeout(function(){
 
             if(shell.exec('./gitpush.sh').code !== 0)  {
@@ -105,5 +105,5 @@ function uuidv4() {
             } else {
                 console.log('done');
             }
-        },15000)
-// });
+        },10000)
+});
