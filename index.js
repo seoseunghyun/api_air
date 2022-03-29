@@ -44,7 +44,7 @@ function uuidv4() {
     });
   }
 
-// schedule.scheduleJob("20 * * * *", function () {
+schedule.scheduleJob("20 * * * *", function () {
     
         // request({
         //     url: url3 + queryParams3,
@@ -84,7 +84,7 @@ function uuidv4() {
                 fs.writeFileSync('info_air.json', body, 'utf8');
                 console.log('공기질 정보 성공');
             });
-        },1000)
+        },10)
         setTimeout(function(){
 
             request({
@@ -105,5 +105,5 @@ function uuidv4() {
             } else {
                 console.log('done');
             }
-        },10000)
-// });
+        },15000)
+});
