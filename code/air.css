@@ -28,4 +28,14 @@
     color: rgba(0,0,0,.1);
     transform: scale(.8) rotateY(180deg);
   }
+  .particle_wrapper div {
+    animation: shake 8s infinite;
+  }
+  body.getted .particle_wrapper:nth-child(15) {
+    transform: scale(.3) translateX(-500px) translateY(-200px);
+  }
   
+  .particle_wrapper:nth-child(15) div {
+    width: 30%;
+    height: 30%;
+  }
