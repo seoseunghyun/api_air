@@ -16,3 +16,16 @@
         gap: 15px;
     }
 }
+#location_pin {
+    /* display: inline-block; */
+    font-size: 26px;
+    color:var(--var-color-main);
+    
+    transition: 1s;
+  }
+  
+  body.loading #location_pin{
+    color: rgba(0,0,0,.1);
+    transform: scale(.8) rotateY(180deg);
+  }
+  
