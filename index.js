@@ -44,7 +44,7 @@ function uuidv4() {
     });
   }
 
-// schedule.scheduleJob("20 * * * *", function () {
+schedule.scheduleJob("20 * * * *", function () {
     
         // request({
         //     url: url3 + queryParams3,
@@ -81,6 +81,34 @@ function uuidv4() {
                 url: url + queryParams,
                 method: 'GET'
             }, function (error, response, body) {
+                // var _body = JSON.parse(body);
+                // var _writeBody = {
+                //     "response": {
+                //         "body": {
+                //             "items": []
+                //         }
+                //     }
+                // }
+                // for(var i in _body.response.body.items) {
+                //     _items = _body.response.body.items[i];
+                //     _writeBody.response.body.items.push({
+                //         khaiValue : _items.khaiValue || null,
+                //         so2Value : _items.so2Value || null,
+                //         coValue : _items.coValue || null,
+                //         o3Grade : _items.o3Grade || null,
+                //         pm10Value : _items.pm10Value || null,
+                //         khaiGrade : _items.khaiGrade || null,
+                //         pm25Value : _items.pm25Value || null,
+                //         dataTime : _items.dataTime || null,
+                //         no2Value : _items.no2Value || null,
+                //         pm25Value : _items.pm25Value || null,
+                //         stationName : _items.stationName || null,
+                //         o3Value : _items.o3Value || null,
+                //         pm25Value : _items.pm25Value || null,
+                //         pm25Value : _items.pm25Value || null,
+                //     })
+
+                // }
                 fs.writeFileSync('info_air.json', body, 'utf8');
                 console.log('공기질 정보 성공');
             });
@@ -106,4 +134,4 @@ function uuidv4() {
                 console.log('done');
             }
         },15000)
-// });
+});
