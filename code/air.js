@@ -7,8 +7,8 @@ document.getElementById("desc_donate").innerHTML = 'Welcome to Air<br />광고 �
 // document.getElementById("btn_menu_today").innerHTML = '<i class="fa-solid fa-location-pin"></i>&nbsp;내 주변';
 
 setTimeout(function(){
-    document.getElementById("location_string").innerHTML = `경기도 성남시 분당구`;
-    document.getElementById("location_center").innerHTML = `성남시 측정소`
+    document.getElementById("location_string").innerHTML = `서울특별시 서초구 우면동`;
+    document.getElementById("location_center").innerHTML = `과천동 측정소`
     document.getElementById("location_center_time").innerHTML =  `(10시 00분 측정)`
     document.body.classList.add('level1');
     document.body.classList.remove("loading")
