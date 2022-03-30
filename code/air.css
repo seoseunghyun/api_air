@@ -5,4 +5,14 @@
     #parti {
         margin-top: 0px;
     }
+    #wrapper_upper {
+        /* height: 100%; */
+        justify-content: center;
+        /* gap: 50px; */
+      }
+    #wrapper_lower {
+        /* height: 100%; */
+        justify-content: center;
+        gap: 15px;
+    }
 }
