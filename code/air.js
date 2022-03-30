@@ -10,6 +10,15 @@ setTimeout(function(){
     document.getElementById("location_string").innerHTML = `서울특별시 서초구 우면동`;
     document.getElementById("location_center").innerHTML = `과천동 측정소`
     document.getElementById("location_center_time").innerHTML =  `(10시 00분 측정)`
+    document.body.classList.remove("level2")
+    document.body.classList.remove("level3")
+    document.body.classList.remove("level4")
+
+    document.body.classList.remove("level5")
+    document.body.classList.remove("level6")
+    document.body.classList.remove("level7")
+    document.body.classList.remove("level8")
+    document.body.classList.remove("loading")
     document.body.classList.add('level1');
     document.body.classList.remove("loading")
     document.body.classList.add("getted")
