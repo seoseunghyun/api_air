@@ -4,7 +4,7 @@ document.addEventListener('deviceready', function(){
 
 
 document.getElementById("desc_donate").innerHTML = 'Welcome to Air<br />광고 보고 개발자 응원하기 (클릭)';
-// document.getElementById("btn_menu_today").innerHTML = '<i class="fa-solid fa-location-pin"></i>&nbsp;내 주변';
+document.getElementById("btn_menu_today").innerHTML = '<i class="fa-solid fa-location-pin"></i>&nbsp;오늘';
 
 // setTimeout(function(){
 //     document.getElementById("location_string").innerHTML = `서울특별시 서초구 우면동`;
