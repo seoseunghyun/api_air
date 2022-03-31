@@ -91,7 +91,7 @@ function uuidv4() {
                         }
                         if(j == 'dataTime') {
                             console.log("-----")
-                            console.log(_body.response.body.items[i][j])
+                            console.log(_body.response.body.items[i][j].split(" ")[1])
                             // _body.response.body.items[i][j] = " " + _body.response.body.items[i][j].split(" ")[1];
                         }
                     }
