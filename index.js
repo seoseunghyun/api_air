@@ -85,15 +85,17 @@ function uuidv4() {
                 for(var i in _body.response.body.items) {
                     for(var j in _body.response.body.items[i]) {
                         var chkList = ['so2Grade', 'coFlag' ,'pm25Flag','pm10Flag', 'o3Grade', 'no2Flag', 'no2Grade', 'o3Grade', 'o3Flag', 'pm25Grade' ,'so2Flag', 'coGrade', 'pm10Grade'];
+                        if(_body.response.body.items[i][j] == null) {
+                            _body.response.body.items[i][j] = -1;
+                        }
                         if(chkList.indexOf(j) !== -1) {
                             // console.log("***")
                             delete _body.response.body.items[i][j];
                         }
-                        if(j == 'dataTime') {
-                            console.log("-----")
-                            console.log(_body.response.body.items[i][j].split(" ")[1])
-                            // _body.response.body.items[i][j] = " " + _body.response.body.items[i][j].split(" ")[1];
-                        }
+                        // if(_body.response.body.items[i][j] != null && j == 'dataTime') {
+                        //     console.log("-----")
+                        //     _body.response.body.items[i][j] = " " + _body.response.body.items[i][j].split(" ")[1];
+                        // }
                     }
 
                 }
