@@ -24,7 +24,7 @@ var queryParams2 = '?' + encodeURIComponent('serviceKey') + '=6IG5R%2BT%2B0rr88b
 queryParams2 += '&' + encodeURIComponent('returnType') + '=' + encodeURIComponent('json'); /* */
 queryParams2 += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1000'); /* */
 queryParams2 += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /* */
-queryParams2 += '&' + encodeURIComponent('searchDate') + '=' + encodeURIComponent(MyDateString); /* */
+queryParams2 += '&' + encodeURIComponent('searchDate') + '=' + encodeURIComponent('2022-03-31'); /* */
 queryParams2 += '&' + encodeURIComponent('InformCode') + '=' + encodeURIComponent('PM10'); /* */
 
 
@@ -86,7 +86,7 @@ function uuidv4() {
                     for(var j in _body.response.body.items[i]) {
                         var chkList = ['so2Grade', 'coFlag' ,'pm25Flag','pm10Flag', 'o3Grade', 'no2Flag', 'no2Grade', 'o3Grade', 'o3Flag', 'pm25Grade' ,'so2Flag', 'coGrade', 'pm10Grade'];
                         if(chkList.indexOf(j) !== -1) {
-                            console.log("***")
+                            // console.log("***")
                             delete _body.response.body.items[i][j];
                         }
                     }
