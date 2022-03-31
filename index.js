@@ -84,7 +84,8 @@ function uuidv4() {
                 var _body = JSON.parse(body);
                 for(var i in _body.response.body.items) {
                     for(var j in _body.response.body.items[i]) {
-                        if(j == 'so2Grade') {
+                        var chkList = ['so2Grade', 'coFlag' ,'pm25Flag','pm10Flag', 'o3Grade', 'no2Flag', 'no2Grade', 'o3Grade', 'o3Flag', 'pm25Grade' ,'so2Flag', 'coGrade', 'pm10Grade'];
+                        if(chkList.indexOf(j) !== -1) {
                             console.log("***")
                             delete _body.response.body.items[i][j];
                         }
