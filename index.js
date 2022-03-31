@@ -90,6 +90,7 @@ function uuidv4() {
                             delete _body.response.body.items[i][j];
                         }
                         if(j == 'dataTime') {
+                            console.log("-----")
                             console.log(_body.response.body.items[i][j])
                             // _body.response.body.items[i][j] = " " + _body.response.body.items[i][j].split(" ")[1];
                         }
