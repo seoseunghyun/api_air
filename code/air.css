@@ -39,3 +39,24 @@
     width: 30%;
     height: 30%;
   }
+  body.loading .details_forecast_item {
+    opacity: 0;
+  }
+  .details_forecast_card {
+    transition-delay: .4s;
+  }
+
+  body.loading .details_forecast_card {
+    transition-delay: 0s;
+  }
+  body.loading .details_forecast_item{
+    transition-delay: 0s !important;
+    transform: scale(.7);
+    opacity: 0;
+  }
+  body.loading .details_forecast_title {
+    transition-delay: 0s;
+  }
+  .details_forecast_boundary {
+      display: none;
+  }
