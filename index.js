@@ -24,7 +24,7 @@ var queryParams2 = '?' + encodeURIComponent('serviceKey') + '=6IG5R%2BT%2B0rr88b
 queryParams2 += '&' + encodeURIComponent('returnType') + '=' + encodeURIComponent('json'); /* */
 queryParams2 += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1000'); /* */
 queryParams2 += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /* */
-queryParams2 += '&' + encodeURIComponent('searchDate') + '=' + encodeURIComponent(MyDateString); /* */
+queryParams2 += '&' + encodeURIComponent('searchDate') + '=' + encodeURIComponent('2022-03-31'); /* */
 queryParams2 += '&' + encodeURIComponent('InformCode') + '=' + encodeURIComponent('PM10'); /* */
 
 
@@ -44,7 +44,7 @@ function uuidv4() {
     });
   }
 
-// schedule.scheduleJob("20 * * * *", function () {
+schedule.scheduleJob("20 * * * *", function () {
     
         // request({
         //     url: url3 + queryParams3,
@@ -103,18 +103,18 @@ function uuidv4() {
                 console.log('공기질 정보 성공');
             });
         },10)
-        // setTimeout(function(){
+        setTimeout(function(){
 
-        //     request({
-        //         url: url2 + queryParams2,
-        //         method: 'GET'
-        //     }, function (error, response, body2) {
-        //         fs.writeFileSync('info_air_forecast.json', body2, 'utf8');
-        //         fs.writeFileSync('update.txt', uuidv4(), 'utf8');
-        //         console.log('공기질 예측 정보 성공');
-        //         // console.log(__dirname);
-        //     });
-        // },4000);
+            request({
+                url: url2 + queryParams2,
+                method: 'GET'
+            }, function (error, response, body2) {
+                fs.writeFileSync('info_air_forecast.json', body2, 'utf8');
+                fs.writeFileSync('update.txt', uuidv4(), 'utf8');
+                console.log('공기질 예측 정보 성공');
+                // console.log(__dirname);
+            });
+        },4000);
         setTimeout(function(){
 
             if(shell.exec('./gitpush.sh').code !== 0)  {
@@ -124,4 +124,4 @@ function uuidv4() {
                 console.log('done');
             }
         },15000)
-// });
+});
