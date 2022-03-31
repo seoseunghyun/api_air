@@ -83,9 +83,11 @@ function uuidv4() {
             }, function (error, response, body) {
                 var _body = JSON.parse(body);
                 for(var i in _body.response.body.items) {
-                    _items = _body.response.body.items[i];
-                    if(i == 'so2Grade') {
-                        delete _items[i];
+                    for(var j in _body.response.body.items[i]) {
+                        if(j == 'so2Grade') {
+                            console.log("***")
+                            delete _body.response.body.items[i][j];
+                        }
                     }
 
                 }
