@@ -10,18 +10,4 @@ document.getElementById("desc_donate").addEventListener("click",function(){
     setTimeout(function(){
         AdMob = false;
     },1000)
-    
-    removeAllListeners(document.getElementById("desc_donate"),"click")
 })
-
-const removeAllListeners = (targetNode, event) => {
-    // remove listeners from the matching nodes
-    _eventHandlers[event]
-      .filter(({ node }) => node === targetNode)
-      .forEach(({ node, handler, capture }) => node.removeEventListener(event, handler, capture))
-  
-    // update _eventHandlers global
-    _eventHandlers[event] = _eventHandlers[event].filter(
-      ({ node }) => node !== targetNode,
-    )
-  }
