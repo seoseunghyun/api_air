@@ -9,6 +9,6 @@ document.getElementById("desc_donate").addEventListener("click",function(){
     document.getElementById("desc_donate").innerHTML = 'Welcome to Air<br />응원 감사합니다^^';
     setTimeout(function(){
         AdMob = false;
-    },5000)
+    },1000)
     
 })
