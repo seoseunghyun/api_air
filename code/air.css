@@ -1,62 +1,21 @@
-#parti {
-    margin-top: 20px;
-}
-@media screen and (min-width: 768px) {
-    #parti {
-        margin-top: 0px;
-    }
-    #wrapper_upper {
-        /* height: 100%; */
-        justify-content: center;
-        /* gap: 50px; */
-      }
-    #wrapper_lower {
-        /* height: 100%; */
-        justify-content: center;
-        gap: 15px;
-    }
-}
-#location_pin {
-    /* display: inline-block; */
-    font-size: 26px;
-    color:var(--var-color-main);
-    
-    transition: 1s;
-  }
-  
-  body.loading #location_pin{
-    color: rgba(0,0,0,.1);
-    transform: scale(.8) rotateY(180deg);
-  }
-  .particle_wrapper div {
-    animation: shake 8s infinite;
-  }
-  body.getted .particle_wrapper:nth-child(15) {
-    transform: scale(.3) translateX(-500px) translateY(-200px);
-  }
-  
-  .particle_wrapper:nth-child(15) div {
-    width: 30%;
-    height: 30%;
-  }
-  body.loading .details_forecast_item {
-    opacity: 0;
-  }
-  .details_forecast_card {
-    transition-delay: .4s;
-  }
 
-  body.loading .details_forecast_card {
-    transition-delay: 0s;
-  }
-  body.loading .details_forecast_item{
-    transition-delay: 0s !important;
-    transform: scale(.7);
-    opacity: 0;
-  }
-  body.loading .details_forecast_title {
-    transition-delay: 0s;
-  }
-  .details_forecast_boundary {
-      display: none;
-  }
+@media screen and (min-width: 768px) {
+
+
+}
+
+/*none apply*/
+
+
+
+.details_forecast_item {
+  height:40px;
+  text-overflow:ellipsis;
+  word-wrap:break-word;
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  line-clamp:2;
+  box-orient:vertical;
+  overflow:hidden
+ }
