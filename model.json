@@ -1,6 +1,12 @@
 {
     "response": {
-        "body": "a",
-        "header": "b"
+        "body": {
+            "pageNo": 1,
+            "numOfRows": 1000
+        },
+        "header": {
+            "resultMsg": "NORMAL_CODE",
+            "resultCode": "00"
+        }
     }
 }
