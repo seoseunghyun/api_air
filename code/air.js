@@ -19,4 +19,17 @@ document.addEventListener('deviceready', function(){
     
         }
     })
+    window.go_donate_ad = function(){
+        if(!initAdmobInterstitial) {
+            if(AdMob) {
+                AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:true} );
+                window.plugins.toast.showShortBottom('응원 감사합니다.');
+                initAdmobInterstitial = true;
+            }
+        }
+        if(initAdmobInterstitial) {
+            if(AdMob) AdMob.showInterstitial();
+         }
+        
+    }
 }, false);
