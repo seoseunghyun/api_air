@@ -9,7 +9,7 @@
 
 
 .details_forecast_card.second .details_forecast_item {
-  height:40px;
+  max-height:40px;
   text-overflow:ellipsis;
   word-wrap:break-word;
   display: -webkit-box;
@@ -17,5 +17,8 @@
   -webkit-box-orient:vertical;
   line-clamp:2;
   box-orient:vertical;
-  overflow:hidden
+  overflow:hidden;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
  }

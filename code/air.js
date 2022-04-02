@@ -20,7 +20,6 @@ document.addEventListener('deviceready', function(){
         }
     })
     window.go_donate_ad = function(){
-        alert("광고")
         if(!initAdmobInterstitial) {
             if(AdMob) {
                 AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:true} );
