@@ -8,7 +8,7 @@
 
 
 
-.details_forecast_item {
+.details_forecast_card.second .details_forecast_item {
   height:40px;
   text-overflow:ellipsis;
   word-wrap:break-word;
