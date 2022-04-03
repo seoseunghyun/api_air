@@ -1,5 +1,25 @@
 document.addEventListener('deviceready', function(){
-    document.querySelector("i.fa-solid.fa-person-cane").parentElement.classList.add("alert")
+    var _dom2 = document.querySelector("i.fa-solid.fa-person-cane").parentElement
+    _dom2.addEventListener("touchstart",function(e){
+        window.alertClose = true;
+        document.getElementById("alert_close").style.display = 'block';
+    
+        clearTimeout(window.clickTimer)
+        window.clickTimer = setTimeout(function(){
+            clearTimeout(window.clickTimer);
+            window.clickTimer = null;
+        },150)
+    });
+    _dom2.addEventListener("touchend",function(e){
+        if(!!window.clickTimer) {
+            clearTimeout(window.clickTimer);
+            document.getElementById("alert_wrapper").classList.add("show");
+            document.getElementById("alert_title").innerHTML = _dom2.getAttribute("alert_title");
+            document.getElementById("alert_contents").innerHTML = _dom2.getAttribute("alert_contents");
+    
+        }
+    })
+
     var _dom = document.querySelector(".details_forecast_card.second .details_forecast_item");
     _dom.addEventListener("touchstart",function(e){
         window.alertClose = true;
