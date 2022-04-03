@@ -1,4 +1,5 @@
 document.addEventListener('deviceready', function(){
+    document.querySelector("i.fa-solid.fa-person-cane").parentElement.classList.add("alert")
     var _dom = document.querySelector(".details_forecast_card.second .details_forecast_item");
     _dom.addEventListener("touchstart",function(e){
         window.alertClose = true;
