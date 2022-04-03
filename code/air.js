@@ -14,7 +14,7 @@ document.addEventListener('deviceready', function(){
         if(!!window.clickTimer) {
             clearTimeout(window.clickTimer);
             document.getElementById("alert_wrapper").classList.add("show");
-            document.getElementById("alert_title").innerHTML = "- 예보 -";
+            document.getElementById("alert_title").innerHTML = "오늘 예보";
             document.getElementById("alert_contents").innerHTML = _dom.innerHTML;
     
         }
