@@ -22,3 +22,7 @@
   justify-content: center;
   justify-items: center;
  }
+
+ #status_title {
+   width: 100%;
+ }
