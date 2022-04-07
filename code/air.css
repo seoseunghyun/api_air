@@ -28,5 +28,14 @@
  }
 
  #status_emoji {
-   width: 100%;
- }
+  width: 100%;
+}
+
+.details_main_card, .details_forecast_card {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+#parti {
+  overflow: visible !important;
+}
