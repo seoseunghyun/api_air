@@ -16,6 +16,9 @@ document.addEventListener('deviceready', function(){
             document.getElementById("alert_wrapper").classList.add("show");
             document.getElementById("alert_title").innerHTML = _dom2.getAttribute("alert_title");
             document.getElementById("alert_contents").innerHTML = _dom2.getAttribute("alert_contents");
+            document.getElementById("alert_subtitle").innerHTML = _dom2.getAttribute("alert_contetns_2");
+            document.getElementById("alert_subtlte2").innerHTML = _domw2.getAttribute("alert_contents_2");
+
     
         }
     })
